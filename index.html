@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - Lucas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- MENU FIXO -->
+    <header>
+        <nav>
+            <h2 class="logo">Lucas Matias Borges de Souza</h2>
+            <ul id="menu">
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#formacao">Formação</a></li>
+                <li><a href="#portfolio">Portfólio</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            <button onclick="alternarTema()">Tema:Claro/Escuro</button>
+        </nav>
+    </header>
+
+    <!-- SOBRE MIM -->
+    <section id="sobre">
+        <h1>Sobre Mim</h1>
+        <p>Olá! Meu nome é Lucas, sou estudante de Engenharia de Software no Rio Grande do Norte (RN). Tenho interesse em desenvolvimento de sistemas, programação e inovação tecnológica. Busco constantemente aprimorar minhas habilidades técnicas e ampliar meus conhecimentos na área de tecnologia, sempre focado em aprender, evoluir e contribuir com soluções eficientes e criativas.</p><br>
+
+        <p>Meus hobbies incluem explorar novas tecnologias, jogar videogames e assistir filmes e séries. Gosto de me manter atualizado sobre novidades do mundo e também aproveitar momentos de lazer com entretenimento digital.</p>
+    </section>
+
+    <!-- FORMAÇÃO -->
+    <section id="formacao">
+        <h1>Formação</h1>
+        <ul>
+            <li>Cursando em Bacharelado em Engenharia de Software</li>
+            <li>Ensino Médio Completo</li>
+            <li>Idioma: Inglês Básico</li>
+        </ul>
+    </section>
+
+    <!-- PORTFÓLIO -->
+    <section id="portfolio">
+        <h1>Portfólio</h1>
+        <p>Projetos desenvolvidos:</p>
+        <ul>
+            <li><a href="https://lucasmatias25.github.io/calculadora-IMC/">Calculadora de IMC</a></li>
+        </ul>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato">
+        <h1>Contato</h1>
+        <form id="formContato">
+            <input type="text" id="nome" placeholder="Nome">
+            <input type="email" id="email" placeholder="E-mail">
+            <textarea id="mensagem" placeholder="Mensagem"></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+        <p id="msg"></p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
