@@ -35,3 +35,17 @@ function alternarTema() {
     document.body.classList.toggle("dark");
 }
 
+// FUNÇÃO MENU MOBILE
+function alternarMenu() {
+    const menu = document.getElementById("menu");
+    menu.classList.toggle("active");
+}
+
+// Fechar menu ao clicar em um link
+document.querySelectorAll("#menu a").forEach(link => {
+    link.addEventListener("click", () => {
+        const menu = document.getElementById("menu");
+        menu.classList.remove("active");
+    });
+});
+

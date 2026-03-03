@@ -10,6 +10,7 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     color: #333;
+    line-height: 1.6;
 }
 
 /* Menu */
@@ -19,17 +20,26 @@ header {
     position: fixed;
     width: 100%;
     top: 0;
+    z-index: 1000;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    color: white;
+    font-size: 1.2rem;
+    margin: 0;
 }
 
 nav ul {
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
 }
 
 nav ul li {
@@ -39,28 +49,125 @@ nav ul li {
 nav ul li a {
     color: white;
     text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+nav ul li a:hover {
+    opacity: 0.7;
+}
+
+/* Botão de tema */
+nav button {
+    padding: 8px 15px;
+    cursor: pointer;
+    background: #444;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+}
+
+nav button:hover {
+    background: #555;
+}
+
+/* Botão menu hamburguer */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 3px;
 }
 
 section {
     padding: 100px 20px;
     min-height: 100vh;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 800px;
+}
+
+section ul {
+    margin-left: 20px;
+    font-size: 1.1rem;
+}
+
+section ul li {
+    margin: 10px 0;
+}
+
+section ul li a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+section ul li a:hover {
+    text-decoration: underline;
 }
 
 /* Formulário */
 form {
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 100%;
+    max-width: 500px;
 }
 
 input, textarea {
-    margin-bottom: 10px;
-    padding: 8px;
+    margin-bottom: 15px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: inherit;
 }
 
-button {
-    padding: 8px;
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #0066cc;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+form button {
+    padding: 12px;
     cursor: pointer;
+    background: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+form button:hover {
+    background: #0052a3;
 }
 
 /* Tema escuro */
@@ -69,3 +176,136 @@ button {
     color: white;
 }
 
+.dark section h1 {
+    color: #fff;
+}
+
+.dark input, .dark textarea {
+    background: #2a2a2a;
+    color: white;
+    border-color: #444;
+}
+
+.dark nav button {
+    background: #555;
+}
+
+.dark nav button:hover {
+    background: #666;
+}
+
+/* Responsividade para tablets */
+@media (max-width: 768px) {
+    section {
+        padding: 80px 15px;
+    }
+
+    section h1 {
+        font-size: 2rem;
+    }
+
+    section p {
+        font-size: 1rem;
+    }
+
+    .logo {
+        font-size: 1rem;
+    }
+
+    nav button {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+
+    form {
+        max-width: 100%;
+    }
+}
+
+/* Responsividade para mobile */
+@media (max-width: 600px) {
+    .menu-toggle {
+        display: flex;
+        order: 3;
+    }
+
+    nav {
+        flex-wrap: wrap;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        order: 4;
+        margin-top: 15px;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    nav button {
+        order: 2;
+        font-size: 0.75rem;
+        padding: 5px 10px;
+    }
+
+    .logo {
+        order: 1;
+        font-size: 0.9rem;
+    }
+
+    section {
+        padding: 70px 10px;
+        min-height: auto;
+    }
+
+    section h1 {
+        font-size: 1.5rem;
+    }
+
+    section p {
+        font-size: 0.95rem;
+    }
+
+    section ul {
+        font-size: 0.95rem;
+        margin-left: 15px;
+    }
+
+    input, textarea {
+        padding: 10px;
+        font-size: 0.95rem;
+    }
+
+    form button {
+        padding: 10px;
+        font-size: 0.95rem;
+    }
+}
+
+/* Responsividade para telas muito pequenas */
+@media (max-width: 360px) {
+    .logo {
+        font-size: 0.8rem;
+    }
+
+    nav button {
+        font-size: 0.7rem;
+        padding: 4px 8px;
+    }
+
+    section h1 {
+        font-size: 1.3rem;
+    }
+
+    section p, section ul {
+        font-size: 0.9rem;
+    }
+}
